@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Munawar | Web Developer</title>
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Global Styles & Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2b2d42;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4361ee;
+        }
+
+        /* --- Reusable Container --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #2b2d42;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: #4361ee;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            color: #2b2d42;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #4361ee;
+        }
+
+        .hero-content h2 {
+            font-size: 24px;
+            font-weight: 300;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #555;
+            font-size: 18px;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            background-color: #4361ee;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #3f37c9;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #4361ee;
+            padding: 12px 30px;
+            text-decoration: none;
+            border: 2px solid #4361ee;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background-color: #4361ee;
+            color: white;
+        }
+
+        /* --- About Section --- */
+        .about-text {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* --- Skills Section --- */
+        .skills-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h4 {
+            font-size: 20px;
+            color: #2b2d42;
+            margin-bottom: 15px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card ul li {
+            background: #f1f3f5;
+            margin-bottom: 10px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        /* --- Contact Section --- */
+        .contact-box {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-box p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #2b2d42;
+            color: #f8f9fa;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo">M. Munawar</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Introduction -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Mohammad Munawar</span></h1>
+            <h2>Creative Web Developer</h2>
+            <p>I love building beautiful, responsive, and user-friendly websites. Turning ideas into real projects through clean code is my passion.</p>
+            <a href="#contact" class="btn">Let's Talk</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="container">
+        <h3 class="section-title">About Me</h3>
+        <div class="about-text">
+            <p>Hello! I am a student currently taking my early steps into web development. I have recently learned the basics of HTML and CSS, and I really enjoy designing web pages from scratch. Right now, I have just started learning JavaScript to add interactivity to my projects. I am excited to keep practicing and improving my coding skills step by step.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h3 class="section-title">My Skills</h3>
+        <div class="skills-wrapper">
+            
+            <div class="skill-card">
+                <div class="icon">💻</div>
+                <h4>Web Technologies</h4>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript (Learning)</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="icon">🚀</div>
+                <h4>Currently Learning</h4>
+                <ul>
+                    <li>Java</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <div class="contact-box">
+            <h3 class="section-title">Get In Touch</h3>
+            <p>Currently open for new opportunities and collaborations. Feel free to reach out!</p>
+            <a href="mailto:your.email@example.com" class="btn-outline">Send an Email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Mohammad Munawar. Designed with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>

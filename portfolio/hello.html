@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Future</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            padding: 50px 30px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #00ff1a;
+        }
+
+        p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #ff00c3;
+            color: #111;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px #00eaff;
+        }
+
+        #message {
+            margin-top: 25px;
+            font-size: 20px;
+            color: #00eaff;
+            min-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Welcome to <span>AI</span></h1>
+
+        <p>
+            Explore the future of technology, artificial intelligence
+            and limitless possibilities.
+        </p>
+
+        <button onclick="changeMessage()">
+            CHOCOBAR🚀
+        </button>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const messages = [
+            "AI is changing the world!",
+            "Keep learning. Keep building.",
+            "The future belongs to creators.",
+            "Code your own future!",
+            "Welcome, future engineer!"
+        ];
+
+        function changeMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("message").textContent =
+                messages[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
